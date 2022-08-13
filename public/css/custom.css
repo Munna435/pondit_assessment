@@ -1,0 +1,71 @@
+body{
+    font-family: Open Sans;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.brand-logo{
+    height: 50px;
+    width: 50px;
+}
+
+.parallax {
+    background-image: url("../images/banner.jpg");
+
+    height: 100%;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topDiv{
+    margin-top: 150px;
+}
+
+.color1{
+    background-color: #D0D3D4;
+}
+
+.color2{
+    background-color: #EAEDED;
+}
+.color3{
+    background-color: #0dcaf0;
+}
+.nav{
+    padding-left: 350%;
+    margin: auto;
+}
+
+.form-wrapper{
+    box-shadow: 0 0 6px #ccc;
+    height: fit-content;
+    padding: 30px 20px;
+}
+
+.form-label{
+    font-size: 14px;
+}
+
+
+
+.offcanvas-body a {
+    color: #888;
+}
+
+.offcanvas-body a:hover{
+    background-color: #f7f7f7;
+    color: #000;
+}
