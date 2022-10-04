@@ -69,3 +69,8 @@ a{
     background-color: #f7f7f7;
     color: #000;
 }
+.container {
+    padding-top: 40px;
+    width: 60%;
+    float: center;
+  }

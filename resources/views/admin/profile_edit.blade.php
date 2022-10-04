@@ -1,116 +1,112 @@
-@extends('admin.layout.app')
-@section('title','profile_edit')
+<x-app>
 
-@section('content')
+    <x-slot:title>
+        Product Add
+    </x-slot:title>
 
-    <div class="color1 p-5">
+
+
+<div class="color1 p-5">
         <div>
-            <h1 class="text-center">My Services</h1>
+            <h1 class="text-center">PROFILE EDIT</h1>
         </div>
     </div>
 
-    <div class="container p-5">
+
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <hr class="mt-0 mb-4">
         <div class="row">
-
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Profile Picture</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2"
+                            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-primary" type="button">Upload new image</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <form>
+                            <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Username (how your name will appear to
+                                    other users on the site)</label>
+                                <input class="form-control" id="inputUsername" type="text"
+                                    placeholder="Enter your username" value="username">
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">First name</label>
+                                    <input class="form-control" id="inputFirstName" type="text"
+                                        placeholder="Enter your first name" value="Valerie">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <input class="form-control" id="inputLastName" type="text"
+                                        placeholder="Enter your last name" value="Luna">
+                                </div>
+                            </div>
+                            <!-- Form Row        -->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (organization name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">Organization name</label>
+                                    <input class="form-control" id="inputOrgName" type="text"
+                                        placeholder="Enter your organization name" value="Start Bootstrap">
+                                </div>
+                                <!-- Form Group (location)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">Location</label>
+                                    <input class="form-control" id="inputLocation" type="text"
+                                        placeholder="Enter your location" value="San Francisco, CA">
+                                </div>
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <input class="form-control" id="inputEmailAddress" type="email"
+                                    placeholder="Enter your email address" value="name@example.com">
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Phone number</label>
+                                    <input class="form-control" id="inputPhone" type="tel"
+                                        placeholder="Enter your phone number" value="555-123-4567">
+                                </div>
+                                <!-- Form Group (birthday)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                    <input class="form-control" id="inputBirthday" type="text" name="birthday"
+                                        placeholder="Enter your birthday" value="06/10/1988">
+                                </div>
+                            </div>
+                            <!-- Save changes button-->
+                            <button class="btn btn-primary" type="button">Save changes</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-6 mt-5 mb-5 p-5 color2">
-
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn col-12 btn-primary">Submit</button>
-                </form>
-
-            </div>
-            <div class="col-md-6 mt-5 mb-5 p-5 ">
-                <h5>Address bar</h5>
-                <p>md foysal khan ...............................................................................</p>
-                <p>No reviews · Bar ????????????????????????????????????????????????</p>
-                <p>W7VR+5PW, A/S Rd</p>
-                <p>Dine-in·</p>
-                <p>Delivery</p>
-                <p>Delivery</p>
-                <p>Delivery</p>
-            </div>
-
-
         </div>
     </div>
 
 
 
-@endsection
+
+
+</x-app>

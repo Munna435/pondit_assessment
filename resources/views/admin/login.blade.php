@@ -1,7 +1,9 @@
-@extends('admin.layout.app')
-@section('title','Login')
+<x-app>
+    <x-slot:title>
+       Login
+    </x-slot:title>
 
-@section('content')
+
 
 <div class="container">
         <div class="row justify-content-center">
@@ -148,4 +150,5 @@
 
 
 
-@endsection
+
+</x-app>

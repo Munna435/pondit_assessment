@@ -1,116 +1,77 @@
-@extends('admin.layout.app')
-@section('title','category_add')
+<x-app>
+    <x-slot:title>
+        Category Add
+    </x-slot:title>
 
-@section('content')
+
+
 
     <div class="color1 p-5">
         <div>
-            <h1 class="text-center">My Services</h1>
-        </div>
-    </div>
-
-    <div class="container p-5">
-        <div class="row">
-
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-1">
-                <div class="card" style="width: 100%">
-                    <img src="{{asset('images/card.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
+            <h1 class="text-center">CATEGORY LIST</h1>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="row">
+    <div class="container py-5" style="min-height: 462px">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @if(session('message'))
 
-            <div class="col-md-6 mt-5 mb-5 p-5 color2">
+                <p class="text-success">
+                    {{session('message')}}
 
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn col-12 btn-primary">Submit</button>
-                </form>
+                </p>
+            @endif
+            @foreach($categories as $category)
+                <tr>
+                    <td>{{$category->id}}</td>
+                    <td>{{$category->name}}</td>
 
-            </div>
-            <div class="col-md-6 mt-5 mb-5 p-5 ">
-                <h5>Address bar</h5>
-                <p>md foysal khan ...............................................................................</p>
-                <p>No reviews · Bar ????????????????????????????????????????????????</p>
-                <p>W7VR+5PW, A/S Rd</p>
-                <p>Dine-in·</p>
-                <p>Delivery</p>
-                <p>Delivery</p>
-                <p>Delivery</p>
-            </div>
+                    <td>
+                        <a href="{{route('admin.show', $category->id)}}" class="btn btn-primary" btn-lg btn-block>
+                            Show
+                        </a>
 
 
-        </div>
+                        <a href="{{route('admin.edit', $category->id)}}"> <button class="btn btn-danger" btn-lg btn-block>
+                                edit
+                            </button> </a>
+
+                       <a href="{{route('admin.destroy', $category->id)}}"> <button class="btn btn-danger" btn-lg btn-block>
+                            delete
+                        </button> </a>
+
+                        <a href="{{route('admin.create')}}"> <button class="btn btn-danger" btn-lg btn-block>
+                                add
+                            </button> </a>
+
+{{--                        <form action = "{{ route ('admin.destroy ',$category-> id )}}" method = "post">--}}
+{{--                        @csrf--}}
+{{--                        @method ( ' delete ' )--}}
+{{--                        <button class = " btn btn - sm btn - outline - danger"> Delete </button>--}}
+
+{{--                            </form>--}}
+
+
+
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
 
 
-@endsection
+
+
+
+</x-app>

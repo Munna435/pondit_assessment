@@ -9,7 +9,7 @@
 
             <div class="col-md-4  topDiv text-center">
                 <h1 class="text-white">Hello Everyone</h1>
-                <h3 class="text-white">As-salamu alaykum</h3>
+                <h3 class="text-white">DORJIBARI</h3>
                 <a href="{{asset('/about')}}">
                     <button  class="btn btn-primary">Learn More </button>
                 </a>

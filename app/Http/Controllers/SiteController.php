@@ -6,24 +6,28 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    function showHome(){
+    function showHome()
+    {
         return view('home');
     }
-    function showAbout(){
+    function showAbout()
+    {
         return view('about');
     }
-    function showService(){
+    function showService()
+    {
         return view('service');
     }
-    function showPortfolio(){
+    function showPortfolio()
+    {
         return view('portfolio');
     }
-    function showLogin(){
+    function showLogin()
+    {
         return view('login');
     }
-    function showproductlist(){
-    return view('showproductlist');
-}
-
-
+    function showProductList()
+    {
+        return view('product_list');
+    }
 }
